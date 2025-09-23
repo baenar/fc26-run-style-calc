@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FC26 Run Style Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+<header>
+    <h1>FC26 - Player Run Style Calculator</h1>
+    <div class="info-icon" id="infoIcon" title="Run Style Calculation Rules">i</div>
+</header>
+
+
+<main>
+    <form id="runnerForm">
+        <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" name="height" min="100" max="250" required>
+        </div>
+        <div class="form-group">
+            <label for="agility">Agility:</label>
+            <input type="number" id="agility" name="agility" min="1" max="99" required>
+        </div>
+        <div class="form-group">
+            <label for="strength">Strength:</label>
+            <input type="number" id="strength" name="strength" min="1" max="99" required>
+        </div>
+        <div class="form-group">
+            <label for="acceleration">Acceleration:</label>
+            <input type="number" id="acceleration" name="acceleration" min="1" max="99" required>
+        </div>
+    </form>
+    <div id="result">
+        Enter player attributes to see their run style.
+    </div>
+</main>
+
+<div id="infoModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>Run Style Calculation Rules (FC 26)</h2>
+        <ul>
+            <li>
+                <b>Explosive</b>:
+                <ul>
+                    <li>Agility minimum 65</li>
+                    <li>(Agility - Strength) &ge; 10</li>
+                    <li>Acceleration minimum 80</li>
+                    <li>Maximum height:<br>Male - 182 cm, Female - 162 cm</li>
+                </ul>
+            </li>
+            <li>
+                <b>Lengthy</b>:
+                <ul>
+                    <li>Strength minimum 65</li>
+                    <li>(Strength - Agility) &ge; 4</li>
+                    <li>Acceleration minimum 40</li>
+                    <li>Minimum height:<br>Male - 183 cm, Female - 164 cm</li>
+                </ul>
+            </li>
+            <li>
+                <b>Controlled</b> – any player not meeting the other two above.</li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    <span>created by @baenar on github</span>
+</footer>
+</body>
+</html>
